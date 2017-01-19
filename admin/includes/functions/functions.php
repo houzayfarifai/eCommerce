@@ -1,6 +1,43 @@
 <?php 
+/*
+=============================================================================================|
+|            =>  Back End Function                                                          |
+|            =>  Coded By Houzayaf Rifai                                                     |
+|            =>  THing Twice  Code Once !                                                    |
+|============================================================================================|
+*/    
+            /* 
+            **GET  All Records FUNCTION V1.0
+            **FUNCTION  All Records FROM DATABASE 
+            */
+            function getAllFrom($table, $field , $where = NULL , $orderfiled , $ordering = "ASC" ) {
+                  global $con ; 
+                  $getAll = $con->prepare("SELECT $table FROM $field $where   ORDER BY $orderfiled $ordering "); 
+                  $getAll->execute();
+                  $all = $getAll->fetchAll();
+                  return $all ; 
+            }
 
 
+            /* 
+            **GET  RECORDS FUNCTION V1.0
+            **FUNCTION TO GET Gategories  FROM DATABASE 
+            */
+            function getCat() {
+                  global $con ; 
+                  $getCats = $con->prepare("SELECT * FROM categories ORDER BY ID ASC "); 
+                  $getCats->execute();
+                  $cats = $getCats->fetchAll();
+                  return $cats ; 
+            }
+
+/*
+=============================================================================================|
+|            =>  Front End Function                                                          |
+|            =>  Coded By Houzayaf Rifai                                                     |
+|            =>  THing Twice  Code Once !                                                    |
+|============================================================================================|
+*/
 	function getTitle() {
 		global $pageTitle ; 
 		if(isset($pageTitle)) {
@@ -10,9 +47,6 @@
 			echo "Default" ; 
 		}
 	}
-// ==============================================================================================
-
-// ==============================================================================================
 			/* 
 			**	Redirect Page 
 			**	$theMSG = ECHO THE ERROR MESSAGE

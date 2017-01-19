@@ -26,7 +26,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="stat">Total Items </div>
-							<span>2000</span>
+							<span><?php echo countItems("Item_ID" , "items" );?></span>
 						</div>
 						<div class="col-md-3">
 							<div class="stat">Total Comments </div>

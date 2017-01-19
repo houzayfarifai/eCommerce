@@ -27,4 +27,13 @@ $(function () {
 	 $(".confirm").click(function() {
 	 	return confirm("Are You Sure?");
 	 });
+	 // show delete button on child cats
+	 // ERROR HERE 
+	 // fadeout not working
+	 // need apdate later !
+	 $(".child-link").hover(function(){
+	 	$(this).find(".show-delete").fadeIn(400);
+	 } , function(){
+	 	$(this).find(".show-delete").fadeOut(400);
+	 });
 });
